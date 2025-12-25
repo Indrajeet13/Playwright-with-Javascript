@@ -85,3 +85,5 @@ async function selectProduct(rows, productName) {
 
     await matchedRow.locator('input[type="checkbox"]').check();
 }
+
+
