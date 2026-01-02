@@ -1,3 +1,5 @@
+const { threadCpuUsage } = require("process");
+
 exports.HomePage = 
 class HomePage {
 
@@ -10,12 +12,13 @@ class HomePage {
 
     async addProductToCart(productName) {
         const productList = await this.page.$$(this.productList);
+        await this.page.waitForTimeout(3000);
 
         for(const product of productList){
-            const name = await product.textContent();
+            const nameOfProduct = await product.textContent();
 
-            if(name.trim() === productName){
-                console.log("Product Found:", name);
+            if(nameOfProduct === productName){
+                console.log("Product Found:", nameOfProduct);
                 product.click()
 
                 await this.page.locator(this.addToCartButton).click(); // click Add to cart

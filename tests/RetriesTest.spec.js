@@ -3,7 +3,7 @@ import { LoginPage} from "./Pages/LoginPage";
 import { HomePage} from "./Pages/HomePage";
 import { CartPage } from "./Pages/CartPage";
 
-test('POM Test', async ({page}) => {
+test('Retries Test', async ({page}) => {
 
     //Login
     const login = new LoginPage(page);
@@ -22,7 +22,7 @@ test('POM Test', async ({page}) => {
     const cart = new CartPage(page);
      await page.waitForTimeout(3000);
     const status = await cart.checkProductInCart('Nexus 6');
-    expect(await status).toBe(true);
+    await expect(status).toBe(true);
 
     await page.waitForTimeout(3000);
 });

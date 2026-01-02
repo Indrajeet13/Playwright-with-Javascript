@@ -1,0 +1,33 @@
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="27.507468999999997">
+<testsuite name="RetriesTest.spec.js" timestamp="2025-12-30T10:19:33.655Z" hostname="chromium" tests="1" failures="1" skipped="0" time="21.501" errors="0">
+<testcase name="Retries Test" classname="RetriesTest.spec.js" time="21.501">
+<failure message="RetriesTest.spec.js:6:5 Retries Test" type="FAILURE">
+<![CDATA[  [chromium] › RetriesTest.spec.js:6:5 › Retries Test ──────────────────────────────────────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      23 |      await page.waitForTimeout(3000);
+      24 |     const status = await cart.checkProductInCart('Nexus 6');
+    > 25 |     expect(await status).toBe(true);
+         |                          ^
+      26 |
+      27 |     await page.waitForTimeout(3000);
+      28 | });
+        at D:\Workspace_VSCode\Playwright_AutomationProject_VSCodeExtension\tests\RetriesTest.spec.js:25:26
+
+    Error Context: ..\test-results\RetriesTest-Retries-Test-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[Cart Item: Samsung galaxy s6
+Cart Item: Samsung galaxy s6
+
+[[ATTACHMENT|test-results\RetriesTest-Retries-Test-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
